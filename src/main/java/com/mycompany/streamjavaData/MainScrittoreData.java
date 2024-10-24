@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -22,8 +23,7 @@ public class MainScrittoreData {
         JFileChooser saveFileChooser = new JFileChooser();
         saveFileChooser.setDialogTitle("Seleziona dove scrivere il file");
 
-        // Facoltativo: filtro per scegliere solo file con una certa estensione
-        // saveFileChooser.setFileFilter(new FileNameExtensionFilter("Text Files", "txt"));
+        saveFileChooser.setFileFilter(new FileNameExtensionFilter("Text Files", "txt"));
         // Mostra la finestra di dialogo per salvare un file
         int saveResult = saveFileChooser.showSaveDialog(null);
         if (saveResult == JFileChooser.APPROVE_OPTION) {
